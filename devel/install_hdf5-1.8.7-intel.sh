@@ -1,8 +1,8 @@
 #!/bin/sh
 
-INSTDIR=/home/unuma/usr/local/hdf5-1.8.7-intel
+export INSTDIR=/home/unuma/usr/local/hdf5-1.8.7-intel
 
-ZLIB=/home/unuma/usr/local/zlib-1.2.5-intel
+export ZLIB=/home/unuma/usr/local/zlib-1.2.5-intel
 
 export CC=icc
 export FC=ifort
