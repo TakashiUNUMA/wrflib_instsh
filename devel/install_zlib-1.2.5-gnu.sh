@@ -13,6 +13,5 @@ export CXXCPP='gcc -E'
 
 ./configure --prefix=${INSTDIR} 2>&1 | tee configure.log
 
-make check 2>&1 | tee makecheck.log
 make 2>&1 | tee make.log
-
+make check 2>&1 | tee makecheck.log

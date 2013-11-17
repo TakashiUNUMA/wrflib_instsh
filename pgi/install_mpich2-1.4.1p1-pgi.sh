@@ -1,6 +1,6 @@
 #!/bin/sh
 
-INSTDIR=/home/unuma/usr/local/mpich2-1.4.1p1-pgi
+export INSTDIR=/home/unuma/usr/local/mpich2-1.4.1p1-pgi
 
 export CC=gcc
 export CXX=g++

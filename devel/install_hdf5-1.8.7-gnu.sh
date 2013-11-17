@@ -9,6 +9,6 @@ export FC=gfortran
 
 ./configure --with-zlib=${ZLIB}/include,${ZLIB}/lib --prefix=${INSTDIR} 2>&1 | tee configure.log
 
-make check 2>&1 | tee makecheck.log
 make 2>&1 | tee make.log
+make check 2>&1 | tee makecheck.log
 
