@@ -1,0 +1,128 @@
+#
+# How to use
+#
+# Last modified: 2013/11/24 by Takashi Unuma, Kyoto Univ.
+#
+
+Outline: 
+ 1. Build NetCDF library.
+  1.0 Download NetCDF sources from the UNIDATA site. 
+  1.1 Un-zip and un-ter the file. 
+  1.2 Copy the shell script. 
+  1.3 Compile.
+  1.4 Set the environmental values.
+  1.5 Check.
+ 2. Build MPICH library.
+  2.0 Download MPICH2 sources from the MPICH site. 
+  2.1 Un-zip and un-ter the file. 
+  2.2 Copy the shell script.
+  2.3 Compile.
+  2.4 Set the environmental values.
+  2.5 Check.
+ 3. Build JasPer library.
+  3.0 Download JasPer sources from the JasPer site.
+  3.1 Un-zip the file. 
+  3.2 Copy the shell script. 
+  3.3 Compile.
+  3.4 Set the environmental values.
+  3.5 Check.
+
+---
+
+ 1. Build NetCDF library.
+  1.0 Download NetCDF sources from the UNIDATA site.
+  $ wget http://www.unidata.ucar.edu/downloads/netcdf/ftp/netcdf-3.6.3.tar.gz
+
+  1.1 Un-zip and un-ter the file. 
+  $ tar -zxvf netcdf-3.6.3.tar.gz
+
+  1.2 Copy the shell script. 
+  $ cd netcdf-3.6.3
+  $ cp ../wrflib_instsh/gnu/install_netcdf-3.6.3-gnu.sh ./
+
+  1.3 Compile.
+  $ sh install_netcdf-3.6.3-gnu.sh
+  $ sudo make install
+
+  1.4 Set the environmental values
+  Please add as follows in ~/.bashrc.
+   #from here -->
+   # netcdf-3.6.3
+   export NETCDF="/usr/local/netcdf-3.6.3-gnu"
+   export NCHOME="${NETCDF}"
+   export NETCDFHOME="${NETCDF}"
+   export PATH="${NETCDF}/bin:${PATH}"
+   export LD_LIBRARY_PATH="${NETCDF}/lib:${LD_LIBRARY_PATH}"
+   export MANPATH="${NETCDF}/man:${MANPATH}"
+   #<-- end
+
+  1.5 Check
+  $ source ~/.bashrc
+  $ ncdump
+
+
+ 2. Build MPICH library.
+  2.0 Download MPICH2 sources from the MPICH site. 
+  $ wget http://www.mpich.org/static/downloads/1.4.1p1/mpich2-1.4.1p1.tar.gz
+
+  2.1 Un-zip and un-ter the file. 
+  $ tar -zxvf mpich2-1.4.1p1.tar.gz
+
+  2.2 Copy the shell script.
+  $ cd mpich2-1.4.1p1
+  $ cp ../wrflib_instsh/gnu/install_mpich2-1.4.1p1-gnu.sh
+
+  2.3 Compile.
+  $ sh install_mpich2-1.4.1p1-gnu.sh
+  $ sudo make install
+
+  2.4 Set the environmental values.
+  Please add as follows in ~/.bashrc.
+   #from here -->
+   # mpich2-1.2
+   export MPICH="/usr/local/mpich2-1.4.1p1-gnu"
+   export PATH="${MPICH}/bin:${PATH}"
+   export LD_LIBRARY_PATH="${MPICH}/lib:${LD_LIBRARY_PATH}"
+   export INCLUDE="${MPICH}/include:${INCLUDE}"
+   #<-- end
+
+  2.5 Check.
+  $ source ~/.bashrc
+  $ mpich2version
+  $ mpif90
+
+ 3. Build JasPer library.
+  3.0 Download JasPer sources from the JasPer site.
+  $ wget http://www.ece.uvic.ca/~frodo/jasper/software/jasper-1.900.1.zip
+
+  3.1 Un-zip the file. 
+  $ unzip jasper-1.900.1.zip
+
+  3.2 Copy the shell script. 
+  $ cd jasper-1.900.1
+  $ cp ../wrflib_instsh/gnu/install_jasper-1.900.1-gnu.sh
+
+  3.3 Compile.
+  $ sh install_jasper-1.900.1-gnu.sh
+  $ sudo make install
+
+  3.4 Set the environmental values.
+  Please add as follows in ~/.bashrc.
+   #from here -->
+   # jasper-1.701.0
+   export JASPER="/usr/local/jasper-1.900.1-gnu"
+   export JASPERBIN="${JASPER}/bin"
+   export JASPERINC="${JASPER}/include"
+   export JASPERLIB="${JASPER}/lib"
+   #<-- end
+
+  3.5 Check.
+  $ source ~/.bashrc
+  $ jasper
+
+
+Questions, comments, suggestions:  send email to kijima.m.u at gmail.com
+
+#
+# End of file
+#

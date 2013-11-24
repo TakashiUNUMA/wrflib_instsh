@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export INSTDIR=/usr/local/zlib-1.2.5-gnu
+export INSTDIR=/home/unumausr/local/zlib-1.2.5-gnu
 
 export CC=gcc
 export CXX=g++

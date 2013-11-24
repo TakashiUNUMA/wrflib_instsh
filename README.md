@@ -5,6 +5,9 @@ Shell scripts for installing libraries in order to compile the WRF model.
 
 GNU, Intel and PGI compilers are supported. 
 
+More detail, please see HowToUse.txt.
+
+
 
 !!! NOTE !!!
 Shell scripts in "devel" directory are under instruction so that the use of these scripts are not recommended.

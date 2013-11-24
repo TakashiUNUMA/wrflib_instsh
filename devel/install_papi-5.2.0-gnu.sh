@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export INSTDIR=/usr/local/papi-5.1.0-gnu
+export INSTDIR=/home/unuma/usr/local/papi-5.1.0-gnu
 
 export CC=gcc
 export F77=gfortran
