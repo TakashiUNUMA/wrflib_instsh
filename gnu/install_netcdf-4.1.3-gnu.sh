@@ -1,9 +1,9 @@
 #!/bin/sh
 
-export INSTDIR=/home/unuma/usr/local/netcdf-4.1.3-gnu
+export INSTDIR=/usr/local/netcdf-4.1.3-gnu
 
-export ZLIB=/home/unuma/usr/local/zlib-1.2.5-gnu
-export HDF5=/home/unuma/usr/local/hdf5-1.8.7-gnu
+export ZLIB=/usr/local/zlib-1.2.5-gnu
+export HDF5=/usr/local/hdf5-1.8.7-gnu
 
 export CC=gcc
 export CXX=g++
