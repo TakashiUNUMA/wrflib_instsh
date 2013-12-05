@@ -1,6 +1,6 @@
 #!/bin/sh
 
-INSTDIR=/usr/local/mpich2-1.4.1p1-intel
+export INSTDIR=/usr/local/mpich2-1.4.1p1-intel
 
 export CC=icc
 export CXX=icpc
