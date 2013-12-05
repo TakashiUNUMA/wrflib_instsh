@@ -1,6 +1,6 @@
 #!/bin/sh
 
-INSTDIR=/usr/local/jasper-1.701.0-intel
+export INSTDIR=/usr/local/jasper-1.701.0-intel
 
 export CC=icc
 export CXX=icpc
