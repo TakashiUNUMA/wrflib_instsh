@@ -1,6 +1,6 @@
 #!/bin/sh
 
-INSTDIR=/home/unuma/usr/local/zlib-1.2.5-intel
+export INSTDIR=/usr/local/zlib-1.2.5-intel
 
 export CC=icc
 export CXX=icpc
