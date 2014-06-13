@@ -1,7 +1,7 @@
 #
 # How to use
 #
-# Last modified: 2013/11/24 by Takashi Unuma, Kyoto Univ.
+# Last modified: 2014/05/03 by Takashi Unuma, Kyoto Univ.
 #
 
 Outline: 
@@ -45,7 +45,7 @@ Outline:
   $ sudo make install
 
   1.4 Set the environmental values
-  Please add as follows in ~/.bashrc.
+  Please add the environmental setting in ~/.bashrc as follows; 
    #from here -->
    # netcdf-3.6.3
    export NETCDF="/usr/local/netcdf-3.6.3-gnu"
@@ -77,7 +77,7 @@ Outline:
   $ sudo make install
 
   2.4 Set the environmental values.
-  Please add as follows in ~/.bashrc.
+  Please add the environmental setting in ~/.bashrc as follows; 
    #from here -->
    # mpich2-1.2
    export MPICH="/usr/local/mpich2-1.4.1p1-gnu"
@@ -107,7 +107,7 @@ Outline:
   $ sudo make install
 
   3.4 Set the environmental values.
-  Please add as follows in ~/.bashrc.
+  Please add the environmental setting in ~/.bashrc as follows; 
    #from here -->
    # jasper-1.701.0
    export JASPER="/usr/local/jasper-1.900.1-gnu"
