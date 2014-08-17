@@ -36,3 +36,4 @@ Shell scripts in "devel" directory are under instruction so that the use of thes
 -- NetCDF ver. 3.6.3 (GNU and Intel compiler)
 -- NetCDF ver. 4.1.3, compiling with HDF5 ver. 1.8.7 and ZLIB ver. 1.2.8 (GNU and Intel compiler)
 -- NetCDF-C ver. 4.3.2 and NetCDF-Fortran ver. 4.4.0, compiling with HDF5 ver. 1.8.13 and ZLIB ver. 1.2.8 (GNU and Intel compiler)
+--- Building NetCDF-Fortran ver. 4.4.0 could not "make check", but could "make install"
