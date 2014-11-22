@@ -6,7 +6,7 @@ export ZLIB=/home/unuma/usr/local/zlib-1.2.8-intel
 export HDF5=/home/unuma/usr/local/hdf5-1.8.13-intel
 
 export CC=icc
-export CXX=icpc
+export CXX='icc -E' # <- the most important setting
 export CPP='icc -E'
 export CXXCPP='icc -E'
 export CPPFLAGS="-DNDEBUG -DpgiFortran -I${ZLIB}/include -I${HDF5}/include"
