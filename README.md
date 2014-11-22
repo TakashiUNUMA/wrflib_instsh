@@ -7,11 +7,12 @@ Shell scripts for installing libraries in order to compile the WRF model.
 
 GNU, Intel and PGI compilers are supported. 
 
-More detail, please see HowToUse.txt.
+The most simplified method for building WRF model is described in HowToUse.txt.
 
+If you want to build NetCDF4 library, please see INSTALL_NETCDF4.txt. 
 
 # NOTE
-Shell scripts in "devel" directory are under instruction so that the use of these scripts are not recommended.
+Shell scripts in "devel" directory are under instruction so that the use of these scripts are not recommended. 
 
 
 # Verification Environments
@@ -36,4 +37,5 @@ Shell scripts in "devel" directory are under instruction so that the use of thes
 -- NetCDF ver. 3.6.3 (GNU and Intel compiler)
 -- NetCDF ver. 4.1.3, compiling with HDF5 ver. 1.8.7 and ZLIB ver. 1.2.8 (GNU and Intel compiler)
 -- NetCDF-C ver. 4.3.2 and NetCDF-Fortran ver. 4.4.0, compiling with HDF5 ver. 1.8.13 and ZLIB ver. 1.2.8 (GNU and Intel compiler)
---- Building NetCDF-Fortran ver. 4.4.0 could not "make check", but could "make install"
+--- Building NetCDF-Fortran ver. 4.4.0 could not "make check", but could "make install" (this problem has already fixed for now: 20141122)
+-- NetCDF-C ver. 4.3.2 and NetCDF-Fortran ver. 4.4.0, compiling with HDF5 ver. 1.8.13, ZLIB ver. 1.2.8, and SZIP ver.2.1 (GNU compiler)

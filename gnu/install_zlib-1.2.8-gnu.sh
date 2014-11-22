@@ -11,7 +11,7 @@ export FFLAGS='-fpic'
 export CPP='gcc -E'
 export CXXCPP='gcc -E'
 
-./configure --prefix=${INSTDIR} 2>&1 | tee configure.log
+./configure --prefix=${INSTDIR}
 
 make 2>&1 | tee make.log
 make check 2>&1 | tee makecheck.log

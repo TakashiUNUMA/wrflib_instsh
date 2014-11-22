@@ -1,0 +1,142 @@
+#
+# INSTALL NETCDF4
+#
+# Last modified: 2014/11/22
+# written by Takashi Unuma, Kyoto Univ.
+#
+
+Outline: 
+
+ 0. Please choose build type. 
+  0.1 Build NetCDF4 without any libraries                --> go to section 1.
+  0.2 Build NetCDF4 with HDF5 and ZLIB libraries         --> go to section 2.
+  0.3 Build NetCDF4 with HDF5, ZLIB, and SZIP libraries  --> go to section 3.
+
+ 1. Build NetCDF4 without any libraries
+
+ 2. Build NetCDF4 with HDF5 and ZLIB libraries
+
+ 3. Build NetCDF4 with HDF5, ZLIB, and SZIP libraries
+  3.0 Download a source code from UNIDATA site
+  3.1 Un-ter the source files
+  3.2 Compile (Run the shell scripts)
+  3.3 Set the environmental values
+  3.4 Check
+
+---
+
+ 1. Build NetCDF4 without any libraries (This means that the output format is same as netcdf ver.3)
+  under construction...
+
+
+
+ 2. Build NetCDF4 with HDF5 and ZLIB libraries
+  under construction...
+
+
+
+ 3. Build NetCDF4 with HDF5, ZLIB, and SZIP libraries
+  3.0 Download source codes from web sites
+   - ZLIB ver.1.2.8
+    $ wget http://zlib.net/zlib-1.2.8.tar.gz
+     ( optional: $ if test $(md5sum zlib-1.2.8.tar.gz | awk '{print $1}') = "44d667c142d7cda120332623eab69f40" ; then echo "md5check sum is matched!" ; else echo "md5 check sum is failed..." ; fi )
+
+   - SZIP ver.2.1
+    $ wget http://www.hdfgroup.org/ftp/lib-external/szip/2.1/src/szip-2.1.tar.gz
+
+   - HDF5 ver.1.8.13
+    $ wget http://www.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8.13/src/hdf5-1.8.13.tar.gz
+     ( optional: $ if test $(md5sum hdf5-1.8.13.tar.gz | awk '{print $1}') = "a1e2d811eaa606e2807306deea3319eb" ; then echo "md5check sum is matched!" ; else echo "md5 check sum is failed..." ; fi )
+
+   - NetCDF ver.4.3.2 for C
+    $ wget ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-4.3.2.tar.gz
+
+   - NetCDF ver.4.4.0 for Fortran
+    $ wget ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-fortran-4.4.0.tar.gz
+
+
+  3.1 Un-zip and un-ter the files. 
+   $ tar -zxvf zlib-1.2.8.tar.gz
+   $ tar -zxvf szip-2.1.tar.gz
+   $ tar -zxvf hdf5-1.8.13.tar.gz
+   $ tar -zxvf netcdf-4.3.2.tar.gz
+   $ tar -zxvf netcdf-fortran-4.4.0.tar.gz
+
+
+  3.2 Compile (Run the shell scripts)
+   ZLIB
+    $ cd zlib-1.2.8
+    $ cp [the directory where you download my scripts]/wrflib_instsh/gnu/install_zlib-1.2.8-gnu.sh ./
+    $ bash install_zlib-1.2.8-gnu.sh
+    $ make install
+
+   SZIP
+    $ cd szip-2.1
+    $ cp [the directory where you download my scripts]/wrflib_instsh/gnu/install_szip-2.1-gnu.sh ./
+    $ bash install_szip-2.1-gnu.sh
+    $ make install
+
+   HDF5
+    $ cd hdf5-1.8.13
+    $ cp [the directory where you download my scripts]/wrflib_instsh/gnu/install_hdf5-1.8.13_with_szip-gnu.sh ./
+    $ bash install_hdf5-1.8.13_with_szip-gnu.sh
+    $ make install
+
+   NetCDF (C)
+    $ cd netcdf-4.3.2
+    $ cp [the directory where you download my scripts]/wrflib_instsh/gnu/install_netcdf-c-4.3.2_with_szip-gnu.sh ./
+    $ bash install_netcdf-c-4.3.2_with_szip-gnu.sh
+    $ make install
+
+   NetCDF (Fortran)
+    $ cd netcdf-4.4.0
+    $ cp [the directory where you download my scripts]/wrflib_instsh/gnu/install_netcdf-f-4.4.0_with_szip-gnu.sh ./
+    $ bash install_netcdf-f-4.4.0_with_szip-gnu.sh
+    $ make install
+
+   NOTE: If you want to change an install directory, please edit the value of INSTDIR in the script. 
+         Default value of "INSTDIR" is under the directory of "/usr/local/". 
+
+
+  3.3 Set the environmental values
+  Please add the environmental setting in ~/.bashrc as follows; 
+   #from here -->
+   # netcdf ver.4.3.2 (C), ver.4.4.0 (Fortran)
+   export NETCDF="/usr/local/netcdf-4.3.2_with_szip-gnu"
+   export NCHOME="${NETCDF}"
+   export NETCDFHOME="${NETCDF}"
+   export PATH="${NETCDF}/bin:${PATH}"
+   export LD_LIBRARY_PATH="${NETCDF}/lib:${LD_LIBRARY_PATH}"
+   export MANPATH="${NETCDF}/man:${MANPATH}"
+   #
+   # hdf5 ver.1.8.13
+   export HDF="/usr/local/hdf5-1.8.13_with_szip-gnu"
+   export PATH="${HDF}/bin:${PATH}"
+   export LD_LIBRARY_PATH="${HDF}/lib:${LD_LIBRARY_PATH}"
+   export INCLUDE="${HDF}/include:${INCLUDE}"
+   export MANPATH="${HDF}/man:${MANPATH}"
+   #
+   # zlib ver.1.2.8
+   export ZLIB="/usr/local/zlib-1.2.8-gnu"
+   export LD_LIBRARY_PATH="${ZLIB}/lib:${LD_LIBRARY_PATH}"
+   export INCLUDE="${ZLIB}/include:${INCLUDE}"
+   #
+   # szip ver. 2.1
+   export SZIP="/usr/local/szip-2.1-gnu"
+   export LD_LIBRARY_PATH="${SZIP}/lib:${LD_LIBRARY_PATH}"
+   export INCLUDE="${SZIP}/include:${INCLUDE}"
+   #<-- end
+
+
+  3.4 Check
+  $ source ~/.bashrc
+  $ ncdump
+  $ nc-config --all
+  $ nf-config --all
+
+
+Questions, comments, suggestions:  send email to kijima.m.u (at) gmail.com
+
+#
+# End of file
+#
