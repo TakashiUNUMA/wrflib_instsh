@@ -1,7 +1,7 @@
 #
 # INSTALL NETCDF4
 #
-# Last modified: 2014/11/22
+# Last modified: 2015/03/02
 # written by Takashi Unuma, Kyoto Univ.
 #
 
@@ -75,6 +75,17 @@ Outline:
     $ cp [the directory where you download my scripts]/wrflib_instsh/gnu/install_szip-2.1-gnu.sh ./
     $ bash install_szip-2.1-gnu.sh
     $ make install
+
+   *** IMPORTANT ***
+    Go to the installed directory of SZIP, and type as follows; 
+     $ ln -s libsz.a libszip.a
+     $ ln -s libsz.la libszip.la
+     $ ln -s libsz.so libszip.so
+     $ ln -s libsz.so.2 libszip.so.2
+     $ ln -s libsz.so.2.0.0 libszip.so.2.0.0
+
+    Reference: http://blog.livedoor.jp/rootan2007/archives/52090679.html (in Japanese)
+     This fruitful information is greatly acknowledged to fix the installation bug of NetCDF and HDF5 with the library of SZIP. 
 
    HDF5
     $ cd hdf5-1.8.13
