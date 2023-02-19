@@ -39,3 +39,7 @@ Shell scripts in "devel" directory are under instruction so that the use of thes
  - NetCDF-C ver. 4.3.2 and NetCDF-Fortran ver. 4.4.0, compiling with HDF5 ver. 1.8.13 and ZLIB ver. 1.2.8 (GNU and Intel compiler)
  - Building NetCDF-Fortran ver. 4.4.0 could not "make check", but could "make install" (this problem has already fixed for now: 20141122)
  -- NetCDF-C ver. 4.3.2 and NetCDF-Fortran ver. 4.4.0, compiling with HDF5 ver. 1.8.13, ZLIB ver. 1.2.8, and SZIP ver.2.1 (GNU compiler)
+
+## AlmaLinux 8.6 (x86_64)
+ - icx, and ifort ver. 2021.7.1
+ - NetCDF-C ver. 4.9.1 and NetCDF-Fortran ver. 4.5.4, compiling with HDF5 ver. 1.12.2 and ZLIB ver. 1.2.13 (Intel compiler)
